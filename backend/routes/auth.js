@@ -53,7 +53,7 @@ router.post("/login", async (req, res) => {
         username: user.username,
       },
       JWT_SECRET,  // Gizli anahtar
-      { expiresIn: '1h' }  // Token geçerlilik süresi
+      { expiresIn: '1m' }  // Token geçerlilik süresi
     );
 
     res.status(200).json({

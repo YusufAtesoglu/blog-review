@@ -9,13 +9,15 @@ const verifyToken = (req, res, next) => {
   }
 
   try {
-    const verified = jwt.verify(token, JWT_SECRET);  // Token doğrulaması
+    const verified = jwt.verify(token, '12345');  // Token doğrulaması
     req.user = verified;  // Doğrulanmış kullanıcıyı isteğe ekle
     next();  // Sonraki middleware ya da route'a geç
   } catch (error) {
     res.status(401).json({ error: "Invalid token." });
   }
 };
+
+
 
 module.exports = verifyToken;
  
